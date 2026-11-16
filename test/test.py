@@ -62,12 +62,12 @@ async def test_project(dut):
     assert writes == []
 
     dut._log.info("SCAN walks the head without writing")
-    start = dut.mon.value.to_unsigned() & 0x3FFF
+    start = dut.addr.value.to_unsigned()
     dut.ui_in.value = 2
     await ClockCycles(dut.clk, 40)
     dut.ui_in.value = 0
     await ClockCycles(dut.clk, 10)
-    moved = ((dut.mon.value.to_unsigned() & 0x3FFF) - start) % TAPE_CELLS
+    moved = (dut.addr.value.to_unsigned() - start) % TAPE_CELLS
     assert 17 <= moved <= 22, f"head moved {moved} cells"
     assert writes == []
 
