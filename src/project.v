@@ -1,5 +1,5 @@
 /*
- * tt_um_bb5 - the 5-state Busy Beaver champion as a Tiny Tapeout tile.
+ * tt_um_chickenwhisperer_bb5 - the 5-state Busy Beaver champion as a Tiny Tapeout tile.
  *
  * Machine: 1RB1LC_1RC1RB_1RD0LE_1LA1LD_1RZ0LA
  * Halts after exactly 47,176,870 steps with 4,098 ones on the tape.
@@ -45,7 +45,7 @@
 
 `default_nettype none
 
-module tt_um_bb5 (
+module tt_um_chickenwhisperer_bb5 (
     input  wire [7:0] ui_in,
     output wire [7:0] uo_out,
     input  wire [7:0] uio_in,
